@@ -32,11 +32,11 @@ import { OnentModule } from './onent/onent.module';
     TypeOrmModule.forRoot({
       name: 'onent',
       type: 'mssql',
-      host: 'NOKTAWANK01.ng.entp.tgc\\NOKTAFCI02',
-      port: 62595,
-      username: 'MSIIS',
-      password: 'vaco_3xX?219',
-      database: 'ONENT',
+      host: process.env.LEGACY_DB_HOST,
+      port: parseInt(process.env.LEGACY_DB_PORT),
+      username: process.env.LEGACY_DB_USERNAME,
+      password: process.env.LEGACY_DB_PASSWORD,
+      database: process.env.LEGACY_DB_NAME,
       extra: {
         trustServerCertificate: true,
       },
