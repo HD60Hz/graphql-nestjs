@@ -31,6 +31,31 @@ type Treaty {
   countries: [Country!]
 }
 
+type OnentLocation {
+  Code: String
+  SiteCodeLength: Int
+  SiteId: Int
+  EmgName: String
+  StateId: Int
+  StateName: String
+  CountryId: Int
+  CountryName: String
+  CityBasarId: Int
+  CityName: String
+  CountyBasarId: Int
+  CountyName: String
+  BcoCompanyId: Int
+  BcoName: String
+  PlanningResponsibleUserId: Int
+  PlanningResponsibleUserName: String
+  GatheringCenterTypeId: String
+  GatheringCenterTypeName: String
+  RealMainRegionId: Int
+  RealMainRegionName: String
+  RealRegionId: Int
+  RealRegionName: String
+}
+
 type Query {
   countries: [Country!]!
   country(id: Int!): Country!
@@ -38,6 +63,7 @@ type Query {
   city(id: Int!): City!
   treaties: [Treaty!]!
   treaty(id: Int!): Treaty!
+  findSiteLocations: [OnentLocation!]!
 }
 
 type Mutation {

@@ -9,6 +9,7 @@ import { City } from './city/entities/city.entity';
 import { Country } from './country/entities/country.entity';
 import { ConfigModule } from '@nestjs/config';
 import { TreatyModule } from './treaty/treaty.module';
+import { OnentModule } from './onent/onent.module';
 
 @Module({
   imports: [
@@ -28,9 +29,22 @@ import { TreatyModule } from './treaty/treaty.module';
       //synchronize: true,
       //logging: true,
     }),
+    TypeOrmModule.forRoot({
+      name: 'onent',
+      type: 'mssql',
+      host: 'NOKTAWANK01.ng.entp.tgc\\NOKTAFCI02',
+      port: 62595,
+      username: 'MSIIS',
+      password: 'vaco_3xX?219',
+      database: 'ONENT',
+      extra: {
+        trustServerCertificate: true,
+      },
+    }),
     CountryModule,
     CityModule,
     TreatyModule,
+    OnentModule,
   ],
   controllers: [],
   providers: [],
