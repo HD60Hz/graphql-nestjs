@@ -63,7 +63,7 @@ type Query {
   city(id: Int!): City!
   treaties: [Treaty!]!
   treaty(id: Int!): Treaty!
-  findSiteLocations: [OnentLocation!]!
+  findSiteLocations(cityName: String!): [OnentLocation!]!
 }
 
 type Mutation {

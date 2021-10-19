@@ -40,6 +40,7 @@ import { OnentModule } from './onent/onent.module';
       extra: {
         trustServerCertificate: true,
       },
+      //logging: true,
     }),
     CountryModule,
     CityModule,
