@@ -35,4 +35,19 @@ export class CountryResolver {
   removeCountry(@Args('id', { type: () => Int, nullable: false }) id: number) {
     return this.countryService.remove(id);
   }
+
+  @Mutation(() => Country, { name: 'addCountryToTreaty' })
+  addToTreaty(
+    @Args('countryId', { type: () => Int, nullable: false }) countryId: number,
+    @Args('treatyId', { type: () => Int, nullable: false }) treatyId: number,
+  ) {
+    return this.countryService.addToTreaty(countryId, treatyId);
+  }
+  @Mutation(() => Country, { name: 'removeCountryFromTreaty' })
+  removeFromTreaty(
+    @Args('countryId', { type: () => Int, nullable: false }) countryId: number,
+    @Args('treatyId', { type: () => Int, nullable: false }) treatyId: number,
+  ) {
+    return this.countryService.removeFromTreaty(countryId, treatyId);
+  }
 }

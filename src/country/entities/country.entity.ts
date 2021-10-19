@@ -31,7 +31,7 @@ export class Country {
   @Field(() => [City], { nullable: true })
   cities: City[];
 
-  @ManyToMany(() => Treaty)
+  @ManyToMany(() => Treaty, (treaty) => treaty.countries, { cascade: true })
   @Field(() => [Treaty], { nullable: true })
   @JoinTable({
     name: 'country_treaty', // table name for the junction table of this relation

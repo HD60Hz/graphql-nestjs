@@ -25,7 +25,7 @@ import { TreatyModule } from './treaty/treaty.module';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       entities: [Country, City, Treaty],
-      synchronize: true,
+      //synchronize: true,
       logging: true,
     }),
     CountryModule,

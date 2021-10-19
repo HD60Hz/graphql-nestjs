@@ -2,11 +2,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Treaty {
-  id: Int!
-  name: String!
-}
-
 type City {
   id: Int!
   name: String!
@@ -30,6 +25,12 @@ enum Continent {
   America
 }
 
+type Treaty {
+  id: Int!
+  name: String!
+  countries: [Country!]
+}
+
 type Query {
   countries: [Country!]!
   country(id: Int!): Country!
@@ -43,6 +44,8 @@ type Mutation {
   createCountry(input: CreateCountryInput!): Country!
   updateCountry(input: UpdateCountryInput!): Country!
   removeCountry(id: Int!): Int
+  addCountryToTreaty(treatyId: Int!, countryId: Int!): Country!
+  removeCountryFromTreaty(treatyId: Int!, countryId: Int!): Country!
   createCity(input: CreateCityInput!): City!
   updateCity(input: UpdateCityInput!): City!
   removeCity(id: Int!): Int

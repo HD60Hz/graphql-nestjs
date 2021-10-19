@@ -17,7 +17,7 @@ export class TreatyService {
   }
 
   async findAll(): Promise<Treaty[]> {
-    return await this.treatyRepo.find();
+    return await this.treatyRepo.find({ relations: ['countries'] });
   }
 
   async findOne(id: number): Promise<Treaty> {
