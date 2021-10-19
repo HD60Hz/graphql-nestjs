@@ -1,12 +1,16 @@
 import { CreateCountryInput } from './create-country.input';
 import { InputType, Field, Int, PartialType } from '@nestjs/graphql';
 import { Continent } from '../enums';
+import { IsAlpha } from 'class-validator';
 
 @InputType()
 export class UpdateCountryInput extends PartialType(CreateCountryInput) {
   @Field(() => Int)
   id: number;
 
+  @IsAlpha('tr-TR', {
+    message: 'Only letters please...',
+  })
   @Field({ nullable: true })
   name: string;
 
