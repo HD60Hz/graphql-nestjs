@@ -26,7 +26,7 @@ import { OnentModule } from './onent/onent.module';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       entities: [Country, City, Treaty],
-      //synchronize: true,
+      synchronize: true,
       //logging: true,
     }),
     TypeOrmModule.forRoot({
