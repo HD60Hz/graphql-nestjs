@@ -10,6 +10,8 @@ import { Country } from './country/entities/country.entity';
 import { ConfigModule } from '@nestjs/config';
 import { TreatyModule } from './treaty/treaty.module';
 import { OnentModule } from './onent/onent.module';
+import { PythonModule } from './python/python.module';
+import { PythonRestModule } from './python-rest/python-rest.module';
 
 @Module({
   imports: [
@@ -46,6 +48,8 @@ import { OnentModule } from './onent/onent.module';
     CityModule,
     TreatyModule,
     OnentModule,
+    PythonModule,
+    PythonRestModule,
   ],
   controllers: [],
   providers: [],

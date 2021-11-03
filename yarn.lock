@@ -974,7 +974,7 @@
     uuid "8.3.2"
     ws "8.2.2"
 
-"@nestjs/mapped-types@1.0.0":
+"@nestjs/mapped-types@*", "@nestjs/mapped-types@1.0.0":
   version "1.0.0"
   resolved "https://artifactory.turkcell.com.tr/artifactory/api/npm/npm/@nestjs/mapped-types/-/mapped-types-1.0.0.tgz#52a0441795f6da8144a35970d3ebc19281f31cfd"
   integrity sha1-UqBEF5X22oFEo1lw0+vBkoHzHP0=
